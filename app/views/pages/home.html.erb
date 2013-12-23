@@ -2,13 +2,13 @@
 <div class="jumbotron center">
 <h1>Welcome to Your Language Dream</h1>
 </br>
+<% if user_signed_in? %>
+  # do something
+  <% else %>
 <p>
-	<button type="button" class="btn btn-primary btn-lg">
-  	<span class="glyphicon glyphicon-ok-sign"></span> Sign Up Now!
-	</button>
-	<button type="button" class="btn btn-default btn-lg">
-  	<span class="glyphicon glyphicon-user"></span> Log In
-	</button>
+	<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
 </p>
+<% end %>
 </div>
 
